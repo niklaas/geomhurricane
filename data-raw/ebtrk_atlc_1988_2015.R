@@ -13,6 +13,7 @@ ext_tracks_colnames <- c("storm_id", "storm_name", "month", "day",
                                 sep = "_"),
                           "storm_type", "distance_to_land", "final")
 
-ext_tracks <- read_fwf("ebtrk_atlc_1988_2015.txt",
-                       fwf_widths(ext_tracks_widths, ext_tracks_colnames),
-                       na = "-99")
+ext_tracks <- readr::read_fwf("ebtrk_atlc_1988_2015.txt",
+                              fwf_widths(ext_tracks_widths,
+                                         ext_tracks_colnames),
+                              na = "-99")
