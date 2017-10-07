@@ -5,8 +5,7 @@
 #' @return A tidied version of ext_tracks as recommended by the authors of the
 #'  Coursera course
 #'
-#' @importFrom dplyr %>%
-#' @importFrom magrittr %<>%
+#' @importFrom magrittr %>% %<>%
 tidy_ext_tracks <- function(ext_tracks) {
   ext_tracks %<>%
     dplyr::select(-distance_to_land,
