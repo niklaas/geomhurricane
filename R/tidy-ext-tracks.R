@@ -36,7 +36,8 @@ tidy_ext_tracks <- function(ext_tracks) {
   ext_tracks %<>%
     tidyr::gather(key = "wind_speed_direction",
                   value = "radius",
-                  dplyr::starts_with("radius_")) %>%
+                  dplyr::starts_with("radius_"),
+                  na.rm = TRUE) %>%
     dplyr::mutate(wind_speed_direction =
                   stringr::str_replace(wind_speed_direction,
                                        "radius_", "")) %>%
