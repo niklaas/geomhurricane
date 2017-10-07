@@ -17,14 +17,12 @@ tidy_ext_tracks <- function(ext_tracks) {
                   -storm_type,
                   -dplyr::contains("pressure"))
 
-  # Tidy column `date`
   ext_tracks %<>%
     tidyr::unite(date, year, month, day, sep = "-") %>%
     tidyr::unite(date, date, hour, sep = " ") %>%
     dplyr::mutate(date = paste0(date, ":00:00")) %>%
     dplyr::mutate(date = lubridate::ymd_hms(date))
 
-  # Tidy column storm_name
   ext_tracks %<>%
     dplyr::mutate(storm_name = stringr::str_to_title(storm_name)) %>%
     dplyr::mutate(storm_name = paste0(storm_name, "-",
