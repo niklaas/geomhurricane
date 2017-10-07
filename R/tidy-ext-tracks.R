@@ -24,6 +24,14 @@ tidy_ext_tracks <- function(ext_tracks) {
     dplyr::mutate(date = paste0(date, ":00:00")) %>%
     dplyr::mutate(date = lubridate::ymd_hms(date))
 
+  # Tidy column storm_name
+  ext_tracks %<>%
+    dplyr::mutate(storm_name = stringr::str_to_title(storm_name)) %>%
+    dplyr::mutate(storm_name = paste0(storm_name, "-",
+                                      lubridate::year(`date`))) %>%
+    dplyr::select(-storm_id) %>%
+    dplyr::rename(storm_id = storm_name)
+
   # Generate columns `wind_speed`, `ne`, `nw`, `se`, `sw`
   ext_tracks %<>%
     tidyr::gather(key = "wind_speed_direction",
