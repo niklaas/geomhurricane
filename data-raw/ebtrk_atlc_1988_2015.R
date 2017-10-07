@@ -17,3 +17,5 @@ ext_tracks <- readr::read_fwf("data-raw/ebtrk_atlc_1988_2015.txt",
                               readr::fwf_widths(ext_tracks_widths,
                                          ext_tracks_colnames),
                               na = "-99")
+
+devtools::use_data(ext_tracks, overwrite = TRUE)
