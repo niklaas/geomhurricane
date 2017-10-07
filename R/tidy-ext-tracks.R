@@ -40,6 +40,9 @@ tidy_ext_tracks <- function(ext_tracks) {
                                        "radius_", "")) %>%
     tidyr::separate(wind_speed_direction,
                     into = c("wind_speed", "direction"), sep = "_") %>%
+    dplyr::mutate(radius = units::set_units(radius, "nautical_mile")) %>%
+    dplyr::mutate(wind_speed = units::set_units(as.numeric(wind_speed),
+                                                "knot")) %>%
     tidyr::spread(direction, radius)
 
   ext_tracks
