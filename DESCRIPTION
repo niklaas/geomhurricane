@@ -9,3 +9,9 @@ Encoding: UTF-8
 LazyData: true
 Suggests:
     readr
+Imports:
+    dplyr,
+    lubridate,
+    magrittr,
+    tidyr
+RoxygenNote: 6.0.1
