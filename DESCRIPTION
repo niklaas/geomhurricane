@@ -8,7 +8,9 @@ License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 Suggests:
-    readr
+    readr,
+    knitr,
+    rmarkdown
 Imports:
     dplyr,
     geosphere,
@@ -18,3 +20,4 @@ Imports:
     tidyr,
     units
 RoxygenNote: 6.0.1
+VignetteBuilder: knitr
