@@ -11,6 +11,7 @@ Suggests:
     readr
 Imports:
     dplyr,
+    geosphere,
     lubridate,
     magrittr,
     stringr,
