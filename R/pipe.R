@@ -6,10 +6,10 @@
 #' @export
 NULL
 
-#' Pipe and store
+#' Pipe and assign
 #'
 #' @importFrom magrittr %<>%
 #' @name %<>%
-#' @rdname pipe-store
+#' @rdname pipe-assign
 #' @export
 NULL
