@@ -10,6 +10,5 @@ vignette: >
 ---
 
 ```{r}
-hurricanes %<>%
-  tidy_ext_tracks(ext_tracks)
+hurricanes <- tidy_ext_tracks(ext_tracks)
 ```
