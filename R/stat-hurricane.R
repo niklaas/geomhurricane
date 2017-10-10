@@ -30,6 +30,7 @@ compute_StatHurricane <- function(data, scales) {
                   bearing <- calc_bearing(piece)
                   radius <- calc_radius(radius)
 
+                  # TODO: Vectorize this
                   piece_coords <-
                     geosphere::destPoint(c(data$lng, data$lat),
                                          b = bearing,
@@ -54,6 +55,7 @@ StatHurricane <-
                    required_aes = c("lng", "lat",
                                     "r_ne", "r_se", "r_nw", "r_sw"))
 
+#' export
 stat_hurricane <-
   function(mapping = NULL, data = NULL, geom = "polygon",
            position = "identity", show.legend = NA, inherit.aes = TRUE, ...) {
