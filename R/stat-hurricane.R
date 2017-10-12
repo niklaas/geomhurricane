@@ -5,18 +5,11 @@ compute_StatHurricane <- function(data, scales) {
   radii  <- list(data$r_ne, data$r_se, data$r_sw, data$r_nw)
   pieces <- c("ne", "se", "sw", "nw")
 
-  calc_bearing <- function(piece) {
-    stopifnot(is.character(pieces),
-              piece %in% pieces)
-
-    piece       <- as.numeric(factor(piece, levels = pieces))
-    piece_width <- 365 / 4
-    start_piece <- (piece_width * (piece - 1)) + 1
-    end_piece   <- piece_width * piece
-    bearing     <- start_piece:end_piece
-
-    bearing
-  }
+  bearing_range <- 1:360
+  bearings <- split(bearing_range,
+                    cut(bearing_range,
+                        breaks = length(pieces),
+                        labels = pieces))
 
   calc_radius <- function(radius) {
     stopifnot(is(radius, "units"))
@@ -27,7 +20,7 @@ compute_StatHurricane <- function(data, scales) {
 
   pieces_coords <-
     purrr::map2(pieces, radii, function(piece, radius) {
-                  bearing <- calc_bearing(piece)
+                  bearing <- bearings[[piece]]
                   radius <- calc_radius(radius)
 
                   # TODO: Vectorize this
