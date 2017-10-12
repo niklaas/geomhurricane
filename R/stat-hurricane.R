@@ -49,7 +49,8 @@ StatHurricane <-
 #' export
 stat_hurricane <-
   function(mapping = NULL, data = NULL, geom = "polygon",
-           position = "identity", show.legend = NA, inherit.aes = TRUE, ...) {
+           position = "identity", na.rm = FALSE, show.legend = NA,
+           inherit.aes = TRUE, ...) {
     ggplot2::layer(stat = StatHurricane,
                    data = data,
                    mapping = mapping,
@@ -57,5 +58,5 @@ stat_hurricane <-
                    position = position,
                    show.legend = show.legend,
                    inherit.aes = inherit.aes,
-                   params = list(...))
+                   params = list(na.rm = na.rm, ...))
   }
