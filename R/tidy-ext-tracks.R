@@ -45,5 +45,13 @@ tidy_ext_tracks <- function(ext_tracks) {
                                                 "knot")) %>%
     tidyr::spread(direction, radius)
 
+  zero_nautical <- units::set_units(0, "nautical_mile")
+
+  ext_tracks %<>%
+    dplyr::filter(!all(ne == zero_nautical,
+                       nw == zero_nautical,
+                       se == zero_nautical,
+                       sw == zero_nautical))
+
   ext_tracks
 }
