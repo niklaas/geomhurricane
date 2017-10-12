@@ -11,4 +11,16 @@ vignette: >
 
 ```{r}
 hurricanes <- tidy_ext_tracks(ext_tracks)
+ike <- hurricane(hurricanes, "Ike-2008")
+```
+
+```{r}
+ggplot2::ggplot(data = ike,
+                mapping =
+                  ggplot2::aes(lng = longitude, lat = latitude,
+                               r_ne = ne,
+                               r_se = se,
+                               r_sw = sw,
+                               r_nw = nw)) +
+  geom_hurricane(fill = "black")
 ```
