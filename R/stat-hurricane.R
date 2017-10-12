@@ -1,6 +1,5 @@
 #' compute_group function for StatHurricane
 #'
-#' @importFrom magrittr %<>%
 compute_StatHurricane <- function(data, scales) {
   radii  <- list(data$r_ne, data$r_se, data$r_sw, data$r_nw)
   pieces <- c("ne", "se", "sw", "nw")
