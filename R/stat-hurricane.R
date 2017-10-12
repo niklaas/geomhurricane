@@ -46,7 +46,6 @@ StatHurricane <-
                    required_aes = c("lng", "lat",
                                     "r_ne", "r_se", "r_nw", "r_sw"))
 
-#' export
 stat_hurricane <-
   function(mapping = NULL, data = NULL, geom = "polygon",
            position = "identity", na.rm = FALSE, show.legend = NA,
