@@ -30,7 +30,6 @@ compute_StatHurricane <- function(data, scales) {
                                          d = radius)
 
                   piece_coords <- as.data.frame(piece_coords)
-                  piece_coords$group <- piece
 
                   piece_coords %<>% dplyr::rename(x = lon, y = lat)
 
