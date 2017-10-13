@@ -1,6 +1,6 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "Introduction"
+author: "Niklaas Baudet von Gersdorff"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -9,18 +9,34 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+The package provides a function `tidy_ext_tracks` to clean the data. It further
+provides a function `hurricane` that retrieves a single storm from the data.
+
 ```{r}
+library(geomhurricane)
+
 hurricanes <- tidy_ext_tracks(ext_tracks)
 ike <- hurricane(hurricanes, "Ike-2008")
 ```
 
 ```{r}
-ggplot2::ggplot(data = ike,
-                mapping =
-                  ggplot2::aes(lng = longitude, lat = latitude,
-                               r_ne = ne,
-                               r_se = se,
-                               r_sw = sw,
-                               r_nw = nw)) +
-  geom_hurricane(fill = "black")
+library(ggmap)
+library(ggplot2)
+
+map_data <- gmap::get_map("Louisiana", zoom = 6, maptype = "toner-background")
+base_map <- gmap::ggmap(map_data, extent = "device")
+
+base_map +
+  geom_hurricane(data = ike,
+                  mapping =
+                    aes(x = longitude, y = latitude,
+                                 r_ne = ne,
+                                 r_se = se,
+                                 r_sw = sw,
+                                 r_nw = nw,
+                                 fill = as.factor(wind_speed))) +
+  scale_color_manual(name = "Wind speed (kts)",
+                     values = c("red", "orange", "yellow")) +
+  scale_fill_manual(name = "Wind speed (kts)",
+                    values = c("red", "orange", "yellow"))
 ```
