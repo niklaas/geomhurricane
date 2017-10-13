@@ -8,7 +8,12 @@ hurricane <- function(.data, name, date = NULL) {
   if(name %in% .data$storm_id) {
     hurricane <- .data %>%
       dplyr::filter(storm_id == name) %>%
-      dplyr::sample_n(1)
+      dplyr::filter(ne != 0, nw != 0, se != 0, sw != 0)
+
+    dates <- unique(hurricane$date)
+
+    hurricane %<>%
+      dplyr::filter(date == sample(dates, size = 1))
 
     structure(hurricane, class = c("hurricane", class(hurricane)))
   } else {
