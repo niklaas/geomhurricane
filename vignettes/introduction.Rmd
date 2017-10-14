@@ -23,8 +23,8 @@ ike <- hurricane(hurricanes, "Ike-2008")
 library(ggmap)
 library(ggplot2)
 
-map_data <- gmap::get_map("Louisiana", zoom = 6, maptype = "toner-background")
-base_map <- gmap::ggmap(map_data, extent = "device")
+map_data <- get_map("Louisiana", zoom = 6, maptype = "toner-background")
+base_map <- ggmap(map_data, extent = "device")
 
 base_map +
   geom_hurricane(data = ike,
