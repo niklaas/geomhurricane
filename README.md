@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/niklaas/geomhurricane.svg?branch=master)](https://travis-ci.org/niklaas/geomhurricane)
+
 # geomhurricane
 
 The goal of geomhurricane is to provide a geom for `ggplot2` that plots wind
