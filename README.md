@@ -24,3 +24,6 @@ provides an answer to the exam.
 - [ ] Plotting multiple storms (see TODOs in R/geom_hurricane)
     - [ ] same storm, different date-times
     - [ ] different storms, different date_times
+- [ ] Plotting multiple storms (see TODOs in R/geom_hurricane)
+    - [ ] same storm, different date-times
+    - [ ] different storms, different date_times
