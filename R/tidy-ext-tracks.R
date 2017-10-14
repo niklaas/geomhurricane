@@ -44,6 +44,7 @@ tidy_ext_tracks <- function(ext_tracks) {
     dplyr::mutate(wind_speed = as.numeric(wind_speed)) %>%
     tidyr::spread(direction, radius)
 
+  # Correct longitude data
   ext_tracks %<>%
     dplyr::mutate(longitude = -longitude)
 
