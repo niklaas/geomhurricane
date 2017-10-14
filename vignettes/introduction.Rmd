@@ -12,14 +12,16 @@ vignette: >
 The package provides a function `tidy_ext_tracks` to clean the data. It further
 provides a function `hurricane` that retrieves a single storm from the data.
 
-```{r}
+```{r, eval=FALSE}
 library(geomhurricane)
 
 hurricanes <- tidy_ext_tracks(ext_tracks)
 ike <- hurricane(hurricanes, "Ike-2008", "2008-09-13")
 ```
 
-```{r}
+Once the data is cleaned, you can plot a wind rose, e.g.:
+
+```{r, eval=FALSE}
 library(ggmap)
 library(ggplot2)
 
