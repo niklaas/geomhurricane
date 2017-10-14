@@ -16,7 +16,7 @@ provides a function `hurricane` that retrieves a single storm from the data.
 library(geomhurricane)
 
 hurricanes <- tidy_ext_tracks(ext_tracks)
-ike <- hurricane(hurricanes, "Ike-2008")
+ike <- hurricane(hurricanes, "Ike-2008", "2008-09-13")
 ```
 
 ```{r}
@@ -34,7 +34,8 @@ base_map +
                                  r_se = se,
                                  r_sw = sw,
                                  r_nw = nw,
-                                 fill = as.factor(wind_speed))) +
+                                 fill = as.factor(wind_speed),
+                                 scale_radii = 0.5)) +
   scale_color_manual(name = "Wind speed (kts)",
                      values = c("red", "orange", "yellow")) +
   scale_fill_manual(name = "Wind speed (kts)",
