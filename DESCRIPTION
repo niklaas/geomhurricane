@@ -14,7 +14,6 @@ Suggests:
 Imports:
     dplyr,
     geosphere,
-    ggforce,
     lubridate,
     magrittr,
     stringr,
