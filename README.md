@@ -4,6 +4,9 @@ The goal of geomhurricane is to provide a geom for `ggplot2` that plots wind
 roses (for an example see [Wikipedia][wiki]). It provides a solution to the
 final exam of [a Coursera course][coursera].
 
+There is a vignette that shortly describes how to use `geom_hurricane` and
+provides an answer to the exam.
+
 [wiki]: https://en.wikipedia.org/wiki/Wind_rose
 [coursera]: https://www.coursera.org/learn/r-data-visualization
 
