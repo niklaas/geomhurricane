@@ -65,6 +65,22 @@ GeomHurricane <-
     }
   )
 
+#' Create a windrose of a storm
+#'
+#' @section Aesthetics
+#'
+#' Required aesthetics are bold
+#'
+#' \itemize{
+#'  \item \strong{x}
+#'  \item \strong{y}
+#'  \item \strong{r_ne}
+#'  \item \strong{r_se}
+#'  \item \strong{r_sw}
+#'  \item \strong{r_nw}
+#'  \item fill
+#'  \item scale_radii
+#' }
 geom_hurricane <- function(mapping = NULL, data = NULL, stat = "identity",
                            position = "identity", na.rm = FALSE,
                            show.legend = NA, inherit.aes = TRUE, ...) {
