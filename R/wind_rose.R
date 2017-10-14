@@ -7,6 +7,10 @@
 #'
 #' @return Latitude and Longitude coordinates for a piece of a wind rose
 wind_rose_piece <- function(lng, lat, radius, piece_key) {
+  # TODO: While this already is quite elegant, it would be cool to refacotr
+  # this in such a way that radii could be provided in a vector and the number
+  # of pieces and each pieces radius would be calculated automatically. Then it
+  # would be possible to abolish `pieces` and everything related with it.
   pieces        <- c("ne", "se", "sw", "nw")
 
   stopifnot(piece_key %in% pieces)
