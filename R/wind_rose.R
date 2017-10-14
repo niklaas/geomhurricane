@@ -11,6 +11,10 @@ wind_rose_piece <- function(lng, lat, radius, piece_key) {
   # this in such a way that radii could be provided in a vector and the number
   # of pieces and each pieces radius would be calculated automatically. Then it
   # would be possible to abolish `pieces` and everything related with it.
+  #
+  # TODO: Another bottleneck of the current implementation is that the lines
+  # connecting each piece don't hit the center of the rose. This is because the
+  # groups in `bearings` don't include the max/min of the neighbouring group.
   pieces        <- c("ne", "se", "sw", "nw")
 
   stopifnot(piece_key %in% pieces)
