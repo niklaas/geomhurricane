@@ -67,7 +67,7 @@ GeomHurricane <-
 
 #' Create a windrose of a storm
 #'
-#' @section Aesthetics
+#' @section Aesthetics:
 #'
 #' Required aesthetics are bold
 #'
